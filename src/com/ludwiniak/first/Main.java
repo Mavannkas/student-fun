@@ -4,6 +4,7 @@ package com.ludwiniak.first;
 import com.ludwiniak.first.hotel.Hotel;
 import com.ludwiniak.first.hotel.Person;
 import com.ludwiniak.first.hotel.Room;
+import com.ludwiniak.first.hotel2d.Test;
 import com.ludwiniak.first.lab3.Point;
 import com.ludwiniak.first.lab3.Rectangle;
 import com.ludwiniak.first.lab3.lib.Circle;
@@ -11,15 +12,63 @@ import com.ludwiniak.first.lab3.lib.MyMath;
 import com.ludwiniak.first.lab4.HundredArray;
 import com.ludwiniak.first.lab4.Matrix;
 import com.ludwiniak.first.lab4.RandomArray;
+import com.ludwiniak.first.lab5.ArrayGenerator;
+import com.ludwiniak.first.lab5.BinaryMatrix;
+import com.ludwiniak.first.lab5.BubbleSort;
+import com.ludwiniak.first.lab5.Divisibility;
 
 public class Main {
-
+    public static int xd;
+    public static boolean xd2;
+    public static String xd3;
 
     public static void main(String[] args) {
-//        testRandom();
-        testMatrix();
+        System.out.println(xd);
+        System.out.println(xd2);
+        System.out.println(xd3);
+    }
 
+    public static void testBinary() {
+        BinaryMatrix binaryMatrix = new BinaryMatrix();
+        binaryMatrix.fillMatrix();
+        binaryMatrix.print();
+        System.out.println(binaryMatrix.isFeedback());
+        System.out.println(binaryMatrix.isCounterFeedback());
+        System.out.println(binaryMatrix.isSymmetric());
+        System.out.println(binaryMatrix.isNonSymmetric());
+    }
 
+    public static void testDiv() {
+        int[] firstArr = ArrayGenerator.getRandomArr(10);
+        int[] secondArr = ArrayGenerator.getRandomArr(10);
+        print(firstArr);
+        System.out.println();
+        print(secondArr);
+        System.out.println(Divisibility.check(firstArr, secondArr));
+    }
+
+    public static void testBubbleSort() {
+        int[][] arr = ArrayGenerator.getRandom2DArr(new int[]{10, 10, 10, 10, 10, 10, 10, 10, 10, 10});
+        print2D(arr);
+        BubbleSort.sort2DByCols(arr, 10);
+        System.out.println();
+        print2D(arr);
+    }
+
+    public static void print(int[] arr) {
+        for (int j : arr) {
+            System.out.print(j + " ");
+        }
+        System.out.println();
+    }
+
+    public static void print2D(int[][] arr) {
+        for (int[] i : arr) {
+            for(int j : i) {
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
     }
 
     public static void testRandom() {
@@ -73,11 +122,11 @@ public class Main {
         Matrix matrix = new Matrix(2, 5);
         matrix.fillMatrix();
         matrix.print();
-        System.out.println("");
+        System.out.println();
         Matrix matrix2 = new Matrix(5, 2);
         matrix2.fillMatrix();
         matrix2.print();
-        System.out.println("");
+        System.out.println();
         Matrix resultMatrix = matrix.multiply(matrix2);
         resultMatrix.print();
     }

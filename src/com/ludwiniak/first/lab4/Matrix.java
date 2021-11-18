@@ -3,9 +3,9 @@ package com.ludwiniak.first.lab4;
 import java.util.Random;
 
 public class Matrix {
-    private final int n;
-    private final int m;
-    private final int[][] matrix;
+    protected final int n;
+    protected final int m;
+    protected final int[][] matrix;
 
     public Matrix(int m, int n) {
         this.m = m;
@@ -28,7 +28,7 @@ public class Matrix {
             for(int j = 0; j < n; j++) {
                 System.out.print(matrix[i][j] + " ");
             }
-            System.out.println("");
+            System.out.println();
         }
     }
 
