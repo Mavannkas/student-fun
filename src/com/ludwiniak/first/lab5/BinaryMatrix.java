@@ -7,7 +7,7 @@ import java.util.Random;
 public class BinaryMatrix extends Matrix {
 
     public BinaryMatrix() {
-        super(5, 5);
+        super(2, 2);
     }
 
     @Override

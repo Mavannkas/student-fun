@@ -4,29 +4,31 @@ package com.ludwiniak.first;
 import com.ludwiniak.first.hotel.Hotel;
 import com.ludwiniak.first.hotel.Person;
 import com.ludwiniak.first.hotel.Room;
-import com.ludwiniak.first.hotel2d.Test;
-import com.ludwiniak.first.lab3.Point;
-import com.ludwiniak.first.lab3.Rectangle;
-import com.ludwiniak.first.lab3.lib.Circle;
-import com.ludwiniak.first.lab3.lib.MyMath;
-import com.ludwiniak.first.lab4.HundredArray;
 import com.ludwiniak.first.lab4.Matrix;
 import com.ludwiniak.first.lab4.RandomArray;
 import com.ludwiniak.first.lab5.ArrayGenerator;
 import com.ludwiniak.first.lab5.BinaryMatrix;
 import com.ludwiniak.first.lab5.BubbleSort;
 import com.ludwiniak.first.lab5.Divisibility;
+import com.ludwiniak.first.lab8.Studies.Enums.Gender;
+import com.ludwiniak.first.lab8.Studies.Studies;
+import com.ludwiniak.first.lab8.Studies.Utils.ConsoleReader;
+
+import java.io.IOException;
 
 public class Main {
-    public static int xd;
-    public static boolean xd2;
-    public static String xd3;
 
     public static void main(String[] args) {
-        System.out.println(xd);
-        System.out.println(xd2);
-        System.out.println(xd3);
+        try {
+            Studies studies = new Studies();
+            studies.printAllPersons();
+
+
+        }catch (IOException | ClassNotFoundException err) {
+            System.out.println(err.getMessage());
+        }
     }
+
 
     public static void testBinary() {
         BinaryMatrix binaryMatrix = new BinaryMatrix();
@@ -48,9 +50,9 @@ public class Main {
     }
 
     public static void testBubbleSort() {
-        int[][] arr = ArrayGenerator.getRandom2DArr(new int[]{10, 10, 10, 10, 10, 10, 10, 10, 10, 10});
+        int[][] arr = ArrayGenerator.getRandom2DArr(new int[]{6, 10, 10, 4, 10, 10, 9, 10, 10, 8});
         print2D(arr);
-        BubbleSort.sort2DByCols(arr, 10);
+        BubbleSort.sort2DByRows(arr);
         System.out.println();
         print2D(arr);
     }
